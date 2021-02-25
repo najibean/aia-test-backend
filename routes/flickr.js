@@ -1,11 +1,10 @@
 const router = require('express').Router()
 const request = require('request')
 const qs = require('query-string')
-require('dotenv').config()
 
 const baseURL = {
-    method: 'flickr.photos.getRecent',
-    api_key: process.env.API_KEY,
+    method: 'flickr.photos.search',
+    api_key: '847b43221e688059973358acc1294ba5',
     format: 'json',
     nojsoncallback: '1',
     per_page: '20'
@@ -18,8 +17,8 @@ const url = 'https://www.flickr.com/services/rest/?'
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    const { page, tags } = req.query
-    const reqURL = url + qs.stringify({ ...baseURL, page, tags })
+    const { tags } = req.query
+    const reqURL = url + qs.stringify({ ...baseURL, tags })
     console.log(reqURL)
     request({ url: reqURL, json: true }, function (request, response) {
         return res.json(response.body)
