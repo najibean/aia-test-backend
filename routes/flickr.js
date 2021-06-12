@@ -22,9 +22,9 @@ router.get('/', function (req, res, next) {
     const { tags } = req.query
     const reqURL = url + qs.stringify({ ...baseURL, tags })
     console.log(reqURL)
-    // request({ url: reqURL, json: true }, function (request, response) {
-    //     return res.json(response.body)
-    // })
+    request({ url: reqURL, json: true }, function (request, response) {
+        return res.json(response.body)
+    })
     // got(reqURL, {json: true}).then(response => {
     //     // return res.json(response.body.url)
     //     console.log(response.body.url);
@@ -35,15 +35,15 @@ router.get('/', function (req, res, next) {
     //     return res.json(response.body)
     // })
 
-    const getData = async(reqUrl) => {
-        try {
-            const response = await axios.get(reqUrl)
-            const data = response.body
-            console.log(data);
-        } catch (error) {
-            console.log(error);
-        }
-    }
+    // const getData = async(reqUrl) => {
+    //     try {
+    //         const response = await axios.get(reqUrl)
+    //         const data = response.body
+    //         console.log(data);
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // }
 });
 
 module.exports = router;
