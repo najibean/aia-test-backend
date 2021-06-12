@@ -5,7 +5,7 @@
     "main": "app.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node app.js"
+        "start": "nodemon app.js"
     },
     "repository": {
         "type": "git",
@@ -18,9 +18,12 @@
     },
     "homepage": "https://github.com/najibean/aia-test-backend#readme",
     "dependencies": {
+        "axios": "^0.21.1",
         "cors": "^2.8.5",
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
+        "got": "^11.8.2",
+        "nodemon": "^2.0.7",
         "query-string": "^6.14.0",
         "request": "^2.88.2"
     }

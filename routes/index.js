@@ -3,7 +3,7 @@ const flickr = require('./flickr')
 
 router.get('/', (req, res) => {
     res.status(200).json({
-        msg: "this is main index routes"
+        msg: "this is main index routes om Rafik"
     })
 })
 
